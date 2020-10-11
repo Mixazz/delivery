@@ -1,28 +1,45 @@
+@import "normalize.scss";
 * {
   box-sizing: border-box;
 }
+body {
+  font-family: "Roboto", sans-serif;
+  padding-top: 44px;
+}
+.main{
+  background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
+}
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
+}
+.input {
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+    font-size: 16px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: normal;
+    height: 40px;
 }
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .search {
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    border-radius: 2px;
-    width: 690px;
-    height: 40px;
+
+  margin-bottom: 40px;
+
+  .input-adress {
+    @extend .input;
+    flex: 0.8;
+
     background-image: url(../img/home.svg);
     background-repeat: no-repeat;
     background-position: left 11px center;
     padding-left: 35px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
+
+
   }
   .buttonts {
     display: flex;
@@ -49,6 +66,417 @@
     }
   }
   }
+}
+.promo {
+  box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+  background: #FFF1B8 url(../img/promo-img.png) no-repeat top -100px right -150px / 700px;
+  border-radius: 10px;
+  padding: 68px 70px;
+  margin-bottom: 56px;
+  .promo-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 46px;
+
+    color: #302C34;
+  }
+  .promo-text {
+    max-width: 538px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #302C34;
+  }
+}
+.restaurants {
+  .section-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 44px;
+    .section-title{
+      margin: 0;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 42px;
+      color: #000000;
+    }
+  }
+  .input-search {
+    @extend .input;
+    width: 306px;
+    background-image: url(../img/search.svg);
+    background-repeat: no-repeat;
+    background-position: left 11px center;
+    padding-left: 32px;
+  }
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  .card {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+    overflow: hidden;
+    align-items: start;
+    margin-bottom: 30px;
+    flex-basis: 31%;
+
+    .card-image {
+      width: 384px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      padding-top: 20px;
+      padding-bottom: 35px;
+      padding-left: 23px;
+      padding-right: 23px;
+
+      .card-heading {
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+
+        .card-title {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 32px;
+          color: #000000;
+          margin: 0;
+        }
+
+        .card-tag {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 20px;
+          color: #fff;
+          background: #262626;
+          border-radius: 2px;
+          padding: 1px 8px;
+
+        }
+      }
+      
+      .card-info {
+        display: flex;
+        align-items:center;
+        flex-wrap: wrap;
+
+        .rating {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 32px;
+          color: #FFC107;
+          margin-right: 10px;
+
+        }
+        %p-c-text {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 32px;
+          color: #8C8C8C;
+
+        }
+        .price {
+          @extend %p-c-text;
+          &::after {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background: #8C8C8C;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+          
+        }
+        .category {
+          @extend %p-c-text;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+.footer {
+  padding: 42px 0 62px 0;
+
+  .footer-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-nav {
+    margin-right: auto;
+    margin-left: 35px;
+
+    .footer-link {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: #595959;
+      text-decoration: none;
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+
+    .social-link {
+
+      &:not(:last-child) {
+        margin-right: 21px;
+      }
+    }
+
+  }
+}
+
+@media(max-width: 1360px) {
+  .container {
+    max-width: 960px;
+  }
+  .promo {
+    background-position: top -50px right -250px;
+    background-size:  600px;
+  } 
+  .card-info { 
+    %p-c-text {
+    font-size: 14px;
+    }
+
+  }
+}
+@media(max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+
+  .promo {
+    padding: 50px;
+    background-position: top  right -150px;
+    background-size: 350px;
+    .promo-text {
+      max-width: 450px;
+      font-size: 18px;
+    }
+  }
+  .cards {
+    .card {
+      flex-basis: 49%;
+
+      .card-info {
+        %p-c-text {
+          font-size: 14px;
+        }
+      }
+    }
+  }
   
+}
+
+@media(max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+
+  .promo {
+    padding: 50px;
+    background-position: center right -150px;
+    background-size: 300px;
+    .promo-title {
+      font-size: 24px;
+      line-height: 1.4;
+    }
+    .promo-text {
+      max-width: 350px;
+      font-size: 16px;
+    }
+  }
+
+  .cards {
+    .card {
+      flex-basis: 49%;
+      .card-text {
+        .card-heading {
+          .card-title {
+            font-size: 20px;
+          }
+        }
+      }
+      .card-info {
+        flex-wrap: wrap;
+        
+        .rating {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+}
+@media(max-width: 578px) {
+  .container {
+    width: 90%;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    .input-adress {
+      order: 5;
+      flex-basis: 100%;
+      margin-top: 15px;
+    }
+  }
+  .promo {
+    padding: 45px;
+    background-image: none;
+    margin-bottom: 30px;
+
+    .promo-text {
+      max-width: 450px;
+      font-size: 18px;
+    }
+  }
+  .restaurants {
+    .section-heading {
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+
+    .input-search {
+      margin-top: 10px;
+      flex-basis: 100%;
+      height: 34px;
+    }
+  }
+    
+  .cards {
+      .card {
+        flex-basis: 100%;
+
+        .card-image {
+          width: 100%;
+        }
+
+        .card-info {
+          // justify-content: space-between;
+          .rating {
+            flex-basis: auto;
+          }
+        }
+      }
+    }
+  .footer {
+  padding: 42px 0 62px 0;
+
+  .footer-block {
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  .footer-nav {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;;
+    order: 0;
+    flex-direction: column;
+  }
+
+  .social-links {
+   order: 2;
+
+  .social-link {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+  }
+  }
+  .footer-logo {
+    order: 1;
+    margin-right: 15px;
+  }
+}
+}
+
+@media(max-width: 578px) {
+  
+
+
+.footer {
+  padding: 42px 0 62px 0;
+
+  .footer-block {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-nav {
+    margin-bottom: 20px;
+    text-align: center;
+
+    .footer-link {
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+  
+
+  .footer-logo {
+    order: 0;
+    margin-bottom: 20px;
+  }
+}
+
+}
+
+@media(max-width: 480px) {
+.header {
+  .buttonts {
+    .button {
+      .button-text {
+        display: none;
+      }
+
+      .button-icon {
+        margin-right: 0;
+
+      }
+    }
+  }
+
+}
+  .promo {
+    padding: 20px;
+  }
 
 }
