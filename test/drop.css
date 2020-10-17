@@ -1,0 +1,21 @@
+.zone {
+  border: 2px solid rgb(236, 193, 1);
+  width: 900px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+.zone img {
+  height: 200px;
+}
+
+.div {
+  margin: 4px;
+  padding: 5px;
+  border: 2px solid saddlebrown;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
